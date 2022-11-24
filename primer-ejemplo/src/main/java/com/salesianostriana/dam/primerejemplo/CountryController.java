@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.primerejemplo;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import java.util.Scanner;
 public class CountryController {
     private final CountryRepository repo;
 
+    @Operation(summary = "Get all countries")
     @GetMapping("/country")
     //public List<Country> findAll() {
     public ResponseEntity<List<Country>> findAll() {

@@ -5,15 +5,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class MonumentsController {
     private MonumentsRepository repo;
 
+    //Me faltaba el list en el tipo y el ok en vez de of
     @GetMapping("/monumento/")
-    public ResponseEntity<Monument> getAllmonuments() {
-        //return ResponseEntity.of(repo.findAll());
-        return null;
+    public ResponseEntity<List<Monument>> getAllmonuments() {
+        return ResponseEntity.ok(repo.findAll());
     }
 
     @GetMapping("/monumento/{id}")
